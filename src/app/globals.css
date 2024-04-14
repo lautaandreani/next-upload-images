@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-blue: 225, 76%, 53%;
+    --light-blue: 203, 78%, 86%;
+    --dark-charcoal: 220, 37%, 9%;
+    --light-gray: 210, 14%, 90%;
+    --white: 0, 0%, 100%;
+    --off-white: 240, 89%, 97%;
+    --dark-charcoal-2: 220, 23%, 15%;
+    --charcoal-gray: 222, 11%, 32%;
+    --off-white-transparent: 240, 89%, 97%, 0.8;
+  }
+  
+  
+  body {
+    background-color: hsl(var(--off-white));
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: hsl(var(--dark-charcoal));
+  }
+}
