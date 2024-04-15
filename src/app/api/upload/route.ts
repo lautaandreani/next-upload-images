@@ -1,12 +1,10 @@
 import chalk from 'chalk'
-import { GetObjectCommand, PutObjectCommand } from '@aws-sdk/client-s3'
+import { PutObjectCommand } from '@aws-sdk/client-s3'
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner'
 
 import { v4 as uuidv4 } from 'uuid'
 
 import { r2 } from '@/lib/r2'
-
-export const runtime = 'edge'
 
 export async function POST(req: Request) {
   try {
@@ -25,5 +23,6 @@ export async function POST(req: Request) {
     return Response.json({ url: signedUrl, key: fileKey })
   } catch (err) {
     console.error('error')
+    return Response.json({ message: 'Error fetching URL' }, { status: 500 })
   }
 }

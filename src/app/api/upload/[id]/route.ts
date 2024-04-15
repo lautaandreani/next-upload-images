@@ -3,8 +3,6 @@ import { GetObjectCommand } from '@aws-sdk/client-s3'
 
 import { r2 } from '@/lib/r2'
 
-export const runtime = 'edge'
-
 export async function GET(req: Request, { params }: { params: { id: string } }) {
   const id = params.id
   try {
