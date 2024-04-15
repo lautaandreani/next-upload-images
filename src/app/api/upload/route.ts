@@ -6,6 +6,8 @@ import { v4 as uuidv4 } from 'uuid'
 
 import { r2 } from '@/lib/r2'
 
+export const runtime = 'edge'
+
 export async function POST(req: Request) {
   try {
     console.log(chalk.yellow(`Generating an upload URL!`))
